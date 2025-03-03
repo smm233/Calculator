@@ -29,6 +29,10 @@ public class Calculator {
     JPanel displayPanel = new JPanel();
     JPanel buttonsPanel = new JPanel();
 
+    String X = "0";
+    String operator = null;
+    String Y = null;
+
     Calculator() {
         frame.setVisible(true);
         frame.setSize(boardWidth, boardHeight);
@@ -80,7 +84,8 @@ public class Calculator {
 
                     } else if (Arrays.asList(topSymbols).contains(buttonValue)){
                         if (buttonValue == "AC") {
-                            
+                            clearAll();
+                            displayLabel.setText("0");
                         } else if (buttonValue == "+/-") {
 
                         } else if (buttonValue == "%") {
@@ -102,5 +107,11 @@ public class Calculator {
                 }
             });
         }
+    }
+
+    void clearAll() {
+        X = "0";
+        operator = null;
+        Y = null;
     }
 }
