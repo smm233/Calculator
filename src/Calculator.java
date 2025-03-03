@@ -82,7 +82,9 @@ public class Calculator {
 
                     } else {
                         if (buttonValue == ".") {
-
+                            if (!displayLabel.getText().contains(buttonValue)) {
+                                displayLabel.setText(displayLabel.getText() + buttonValue);
+                            }
                         } else if ("0123456789".contains(buttonValue)){
                             if (displayLabel.getText() == "0") {
                                 displayLabel.setText(buttonValue);
