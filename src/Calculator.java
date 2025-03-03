@@ -20,7 +20,7 @@ public class Calculator {
         "1", "2", "3", "+",
         "0", ".", "√", "="
     };
-    
+
     String[] rightSymbols = {"÷", "×", "-", "+", "="};
     String[] topSymbols = {"AC", "+/-", "%"};
 
@@ -47,5 +47,9 @@ public class Calculator {
         displayPanel.setLayout(new BorderLayout());
         displayPanel.add(displayLabel);
         frame.add(displayPanel, BorderLayout.NORTH);
+
+        buttonsPanel.setLayout(new GridLayout(5, 4));
+        buttonsPanel.setBackground(customDarkBlue);
+        frame.add(buttonsPanel);
     }
 }
