@@ -91,7 +91,9 @@ public class Calculator {
                             displayNumber *= -1;
                             displayLabel.setText(convertToInteger(displayNumber));
                         } else if (buttonValue == "%") {
-
+                            double displayNumber = Double.parseDouble(displayLabel.getText());
+                            displayNumber /= 100;
+                            displayLabel.setText(convertToInteger(displayNumber));
                         }
                     } else {
                         if (buttonValue == ".") {
