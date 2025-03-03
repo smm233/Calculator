@@ -14,6 +14,8 @@ public class Calculator {
     Color customDarkBlue = new Color(48,68,77,255);
 
     JFrame frame = new JFrame("Calculator");
+    JLabel displayLabel = new JLabel();
+    JPanel displayPanel = new JPanel();
 
     Calculator() {
         frame.setVisible(true);
