@@ -87,7 +87,9 @@ public class Calculator {
                             clearAll();
                             displayLabel.setText("0");
                         } else if (buttonValue == "+/-") {
-
+                            double displayNumber = Double.parseDouble(displayLabel.getText());
+                            displayNumber *= -1;
+                            displayLabel.setText(convertToInteger(displayNumber));
                         } else if (buttonValue == "%") {
 
                         }
@@ -113,5 +115,12 @@ public class Calculator {
         X = "0";
         operator = null;
         Y = null;
+    }
+
+    String convertToInteger(double displayNumber) {
+        if (displayNumber % 1 == 0) {
+            return Integer.toString((int) displayNumber);
+        }
+        return Double.toString(displayNumber);
     }
 }
