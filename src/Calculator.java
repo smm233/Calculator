@@ -58,6 +58,7 @@ public class Calculator {
             button.setFont(new Font("Arial", Font.PLAIN, 30));
             button.setText(buttonValue);
             button.setFocusable(false);
+            button.setBorder(new LineBorder(customDarkBlue));
             if (Arrays.asList(topSymbols).contains(buttonValue)){
                 button.setBackground(customLightGreen);
                 button.setForeground(Color.black);
