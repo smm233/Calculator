@@ -95,6 +95,9 @@ public class Calculator {
                                 } else if (operator == "÷") {
                                     displayLabel.setText(convertToInteger(numX / numY));
                                 }
+                                X = displayLabel.getText();
+                                operator = null;
+                                Y = "0";
                             }
                         } else if ("+-×÷".contains(buttonValue)){
                             if (operator == null) {
