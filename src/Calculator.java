@@ -18,7 +18,7 @@ public class Calculator {
         "7", "8", "9", "×", 
         "4", "5", "6", "-",
         "1", "2", "3", "+",
-        "0", ".", "√", "="
+        "C", "0", ".", "="
     };
 
     String[] rightSymbols = {"÷", "×", "-", "+", "="};
@@ -34,7 +34,6 @@ public class Calculator {
     String Y = null;
 
     Calculator() {
-        frame.setVisible(true);
         frame.setSize(boardWidth, boardHeight);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
@@ -81,7 +80,30 @@ public class Calculator {
                     JButton button = (JButton) e.getSource();
                     String buttonValue = button.getText();
                     if (Arrays.asList(rightSymbols).contains(buttonValue)){
+                        if (buttonValue == "=") {
+                            if (X != null) {
+                                Y = displayLabel.getText();
+                                double numX = Double.parseDouble(X);
+                                double numY = Double.parseDouble(Y);
 
+                                if (operator == "+") {
+                                    displayLabel.setText(convertToInteger(numX + numY));
+                                } else if (operator == "-") {
+                                    displayLabel.setText(convertToInteger(numX - numY));
+                                } else if (operator == "×") {
+                                    displayLabel.setText(convertToInteger(numX * numY));
+                                } else if (operator == "÷") {
+                                    displayLabel.setText(convertToInteger(numX / numY));
+                                }
+                            }
+                        } else if ("+-×÷".contains(buttonValue)){
+                            if (operator == null) {
+                                X = displayLabel.getText();
+                                displayLabel.setText("0");
+                                Y = "0";
+                            }
+                            operator = buttonValue;
+                        }
                     } else if (Arrays.asList(topSymbols).contains(buttonValue)){
                         if (buttonValue == "AC") {
                             clearAll();
