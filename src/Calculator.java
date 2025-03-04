@@ -112,9 +112,11 @@ public class Calculator {
                             clearAll();
                             displayLabel.setText("0");
                         } else if (buttonValue == "+/-") {
-                            double displayNumber = Double.parseDouble(displayLabel.getText());
-                            displayNumber *= -1;
-                            displayLabel.setText(convertToInteger(displayNumber));
+                            if (displayLabel.getText() != "0") {
+                                double displayNumber = Double.parseDouble(displayLabel.getText());
+                                displayNumber *= -1;
+                                displayLabel.setText(convertToInteger(displayNumber));
+                            }
                         } else if (buttonValue == "%") {
                             double displayNumber = Double.parseDouble(displayLabel.getText());
                             displayNumber /= 100;
