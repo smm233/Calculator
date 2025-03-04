@@ -133,6 +133,41 @@ public class Calculator {
                             } else {
                                 displayLabel.setText(displayLabel.getText() + buttonValue);
                             }
+                        } else if (buttonValue == "C") {
+                            String displayNumber = displayLabel.getText();
+                            if (displayNumber.contains(".")) {
+                                if (displayNumber.substring(displayNumber.length()-2, displayNumber.length()).contains(".")) {
+                                    displayLabel.setText(displayNumber.substring(0, displayNumber.length()-2));
+                                } else {
+                                    displayLabel.setText(displayNumber.substring(0, displayNumber.length()-1));
+                                }
+                            } else {
+                                displayLabel.setText(displayNumber.substring(0, displayNumber.length()-1));
+                                switch (displayNumber) {
+                                    case "0":
+                                    case "1":
+                                    case "2":
+                                    case "3":
+                                    case "4":
+                                    case "5":
+                                    case "6":
+                                    case "7":
+                                    case "8":
+                                    case "9":
+                                    case "-1":
+                                    case "-2":
+                                    case "-3":
+                                    case "-4":
+                                    case "-5":
+                                    case "-6":
+                                    case "-7":
+                                    case "-8":
+                                    case "-9":
+                                        {
+                                            displayLabel.setText("0");
+                                        }
+                                }
+                            }
                         }
                     }
                 }
